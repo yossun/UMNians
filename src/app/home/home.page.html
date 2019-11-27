@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="m1"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>UMNian</ion-title>
+    <ion-buttons slot="end">
+      <a [routerLink]="['/profile']"
+        ><img
+          src="https://cdn2.iconfinder.com/data/icons/user-icon-2-1/100/user_5-15-512.png"
+          style="width:50px;height:50px;"
+      /></a>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" text-center>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{ loadednews[0].name }}</ion-card-title>
+            <ion-card-subtitle>
+              {{ loadednews[0].general }}
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-img [src]="loadednews[0].imageUrl1"></ion-img>
+          <ion-card-content>
+            <p>{{ loadednews[0].description }}</p>
+            <ion-row>
+              <ion-col col-50>
+                <ion-buttons float-left>
+                  <ion-icon
+                    name="heart-empty"
+                    slot="icon-only"
+                    (click)="onAddNews(loadednews[0])"
+                  ></ion-icon>
+                </ion-buttons>
+              </ion-col>
+              <ion-col col-50>
+                <ion-buttons float-right>
+                  <ion-input
+                    type="text"
+                    placeholder="Type your message"
+                    style="background: #f8d2b9; border: 1px; width:150px;"
+                    no-padding
+                  >
+                  </ion-input>
+                  &nbsp; &nbsp; &nbsp;
+                  <ion-icon slot="icon-only" name="send" mode="md"></ion-icon>
+                </ion-buttons>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" text-center>
+        <ion-list>
+          <ion-item *ngFor="let news of loadednews.slice(1)">
+            <ion-thumbnail slot="start">
+              <ion-img [src]="news.imageUrl1"></ion-img>
+            </ion-thumbnail>
+            <ion-label>
+              <h2>{{ news.name }}</h2>
+              <p>{{ news.description }}</p>
+              <ion-row>
+                <ion-col col-50>
+                  <ion-buttons float-left>
+                    <ion-icon
+                      name="heart"
+                      slot="icon-only"
+                      (click)="onAddNews(news)"
+                    ></ion-icon>
+                  </ion-buttons>
+                </ion-col>
+                <ion-col col-50>
+                  <ion-buttons float-right>
+                    <ion-input
+                      type="text"
+                      placeholder="Type your message"
+                      style="background: #ffffff; border: 1px; width:100px;"
+                      no-padding
+                    >
+                    </ion-input>
+                    &nbsp;
+                    <ion-icon slot="icon-only" name="send" mode="md"></ion-icon>
+                  </ion-buttons>
+                </ion-col>
+              </ion-row>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

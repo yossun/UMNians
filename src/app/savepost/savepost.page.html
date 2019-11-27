@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="m1"></ion-menu-button>
+    </ion-buttons> 
+    <ion-title>Save Article</ion-title>
+    <ion-buttons slot="end">
+      <a [routerLink]="['/profile']"><img src="https://cdn2.iconfinder.com/data/icons/user-icon-2-1/100/user_5-15-512.png" style="width:50px;height:50px;"/></a>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<ion-label style="font-size: 12px; color: red;">*Slide artikel ke arah kiri dan tekan X untuk unsave artikel</ion-label>
+  <div class="ion-text-center" id="flagDisplay">
+    <h4 id="flagDisplay">You haven't got a saved sarticle yet.</h4>
+    <ion-button color="primary" [routerLink]="['/home']">Add Article</ion-button>
+  </div>
+  <br>
+  <ion-item-sliding *ngFor="let news of myNews" #slidingHome style="border-style: groove; margin-bottom: 10px;">
+      <ion-item lines="none">
+          <ion-row>
+            <ion-col>
+              <ion-img [src]="news.imageUrl1" style="width:150px;height:150px;"></ion-img>
+            </ion-col>
+            <ion-col>
+              <ion-card-title>{{ news.name }}</ion-card-title><br>
+              <p>{{ news.description }}</p>
+              <ion-row>
+                <ion-col>
+                  <p>{{ news.gender }}</p>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger" (click)="onCancelMyNews(news.id)">
+          <ion-icon name="close" slot="icon-only"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+  </ion-item-sliding>
+</ion-content>
