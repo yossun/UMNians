@@ -1,9 +1,32 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>new-mypost</ion-title>
+    <ion-title>Create Post</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-item>
+      <ion-label position="floating">ID Post</ion-label>
+      <ion-input type="text" ngModel name="id"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input type="text" ngModel name="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Description</ion-label>
+      <ion-input type="text" ngModel name="description"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">General</ion-label>
+      <ion-input type="text" ngModel name="general"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Image URL</ion-label>
+      <ion-input type="text" ngModel name="imgUrl1" ></ion-input>
+    </ion-item>
+    <ion-button color="dark" type="submit" expand="block">Create</ion-button>
+    <ion-button color="light" expand="block" [routerLink]="['/my-post']">Cancel</ion-button>
+  </form>
 </ion-content>

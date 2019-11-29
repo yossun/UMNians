@@ -1,23 +1,60 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="secondary">
     <ion-buttons slot="start">
-      <ion-menu-button menu="m1"></ion-menu-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Profil</ion-title>
-    <!-- <ion-buttons slot="end">
-      <a [routerLink]="['/profile']"><img src="https://cdn2.iconfinder.com/data/icons/user-icon-2-1/100/user_5-15-512.png" style="width:50px;height:50px;"/></a>
-    </ion-buttons> -->
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <div class="ion-text-center">
-    <img src="https://ultimasonora.weebly.com/uploads/2/5/3/7/25371606/5796110.png" style="width:150px;height:150px;"/>
-    <h1>Ultima Sonora</h1>
-    <h2>Paduan Suara atau choir dari kampus Universitas Multimedia Nusantara</h2>
-    <ion-item-divider></ion-item-divider>
-    <h1>Artikel</h1>
-    <h1>Ultima Sonora raih dua emas di Thailand</h1>
-    <h2>UKM KAMPUS</h2>
+<ion-content class="content-bg">
+
+  <div class="vertical-padding">
+
+    <div class="ion-text-center">
+      <h4>Ultima Sonora</h4>
+    </div>
+    <div class="ion-text-center">
+      <span class="text-muted ion-no-margin text-job">Est 2007.</span>
+    </div>
+    <div class="empty bg-secondary"></div>
+    <div class="ion-text-center image-over-div">
+      <img src="https://ultimasonora.weebly.com/uploads/2/5/3/7/25371606/5796110.png" alt="" class="image-round border-white">
+    </div>
+    <br>
+
+    <p class="ion-text-center text-profile">
+      Ultima Sonora adalah Paduan Suara Mahasiswa Universitas Multimedia Nusantara yang telah berdiri sejak 2007. 
+      <br>Dilatih oleh Antonius Ria Deni Sulistya
+    </p>
+  
   </div>
+
+  <ion-list lines="none" inset="true">
+    <ion-list-header>
+      <ion-label>Recent archievement</ion-label>
+    </ion-list-header>
+  
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="https://www.umn.ac.id/wp-content/uploads/2019/08/THUMB_ulson-409x258.jpg" />
+      </ion-avatar>
+      <ion-label>
+        <h2>Gold Diploma (kategori Folklore)</h2>
+        <p>Singapore Internasional Choral Festival (SICF) Agustus 2016.</p>
+      </ion-label>
+    </ion-item>
+  
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="https://palapanews.com/wp-content/uploads/2016/08/UMN_2.jpg" />
+      </ion-avatar>
+      <ion-label>
+        <h2>Dua Bronze Diploma (Kategori Mixed Voice dan Musica Sacra)</h2>
+        <p>Singapore Internasional Choral Festival (SICF) Agustus 2016.</p>
+      </ion-label>
+    </ion-item>
+  
+  </ion-list>
+
 </ion-content>
